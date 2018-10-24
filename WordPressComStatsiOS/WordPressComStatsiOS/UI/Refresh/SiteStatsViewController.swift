@@ -5,6 +5,8 @@ public class SiteStatsViewController: UIViewController {
     // MARK: - Properties
 
     @IBOutlet weak var filterTabBar: FilterTabBar!
+    @IBOutlet weak var insightsContainerView: UIView!
+    @IBOutlet weak var statsContainerView: UIView!
 
     // MARK: - View
 
