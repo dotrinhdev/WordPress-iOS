@@ -2,6 +2,8 @@
 
 #import "WordPress-Swift.h"
 
+#import "MaterialBottomSheet.h"
+
 static CGFloat const BLVCHeaderViewLabelPadding = 10.0;
 
 static NSInteger HideAllMinSites = 10;
@@ -928,7 +930,9 @@ static NSInteger HideSearchMinSites = 3;
 
 - (void)showBottomSheetDemo
 {
-    DDLogWarn(@"Presenting the bottom sheet demo...");
+    BottomSheetDemoViewController *viewController = [[BottomSheetDemoViewController alloc] init];
+    MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:viewController];
+    [self presentViewController:bottomSheet animated:true completion:nil];
 }
 
 - (void)setVisible:(BOOL)visible forBlog:(Blog *)blog
