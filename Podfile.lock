@@ -51,6 +51,24 @@ PODS:
     - HockeySDK/DefaultLib (= 5.1.4)
   - HockeySDK/DefaultLib (5.1.4)
   - lottie-ios (2.5.0)
+  - MaterialComponents/BottomSheet (68.0.0):
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/ShapeLibrary
+    - MaterialComponents/private/Shapes
+  - MaterialComponents/private/Application (68.0.0)
+  - MaterialComponents/private/KeyboardWatcher (68.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (68.0.0)
+  - MaterialComponents/private/ShapeLibrary (68.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/private/Shapes
+  - MaterialComponents/private/Shapes (68.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/ShadowElevations (68.0.0)
+  - MaterialComponents/ShadowLayer (68.0.0):
+    - MaterialComponents/ShadowElevations
   - MGSwipeTableCell (1.6.7)
   - MRProgress (0.8.3):
     - MRProgress/ActivityIndicator (= 0.8.3)
@@ -157,6 +175,7 @@ DEPENDENCIES:
   - Gridicons (= 0.16)
   - HockeySDK (= 5.1.4)
   - lottie-ios (= 2.5.0)
+  - MaterialComponents/BottomSheet (~> 68.0.0)
   - MGSwipeTableCell (= 1.6.7)
   - MRProgress (= 0.8.3)
   - Nimble (~> 7.1.1)
@@ -195,6 +214,7 @@ SPEC REPOS:
     - Gridicons
     - HockeySDK
     - lottie-ios
+    - MaterialComponents
     - MGSwipeTableCell
     - MRProgress
     - Nimble
@@ -243,6 +263,7 @@ SPEC CHECKSUMS:
   Gridicons: 8cc5cb666d5ad8b8f1771d3c7a93d27ae25b7c2e
   HockeySDK: 15afe6bc0a5bfe3a531fd73dbf082095f37dac3b
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
+  MaterialComponents: 2f9ee23abfc633502026aa34e0bdc9a489e1d00d
   MGSwipeTableCell: fb20e983988bde2b8d0df29c2d9e1d8ffd10b74a
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   Nimble: 2839b01d1b31f6a6a7777a221f0d91cf52e8e27b
@@ -264,6 +285,6 @@ SPEC CHECKSUMS:
   wpxmlrpc: bfc572f62ce7ee897f6f38b098d2ba08732ecef4
   ZendeskSDK: 44ee00338dd718495f0364369420ae11b389c878
 
-PODFILE CHECKSUM: 687ba8e84ee0eeb44f1c716034bf3d2c498bf35c
+PODFILE CHECKSUM: 6a56d0cfb7cbf931433dc248eb9761cc8671d3b3
 
 COCOAPODS: 1.5.3
