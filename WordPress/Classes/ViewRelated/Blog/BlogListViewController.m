@@ -3,6 +3,8 @@
 #import "WordPress-Swift.h"
 
 #import "MaterialBottomSheet.h"
+#import "MaterialShapes.h"
+#import "MaterialShapeLibrary.h"
 
 static CGFloat const BLVCHeaderViewLabelPadding = 10.0;
 
@@ -934,7 +936,16 @@ static NSInteger HideSearchMinSites = 3;
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 
     MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:navigationController];
-    
+
+    MDCRectangleShapeGenerator *shapeGenerator = [[MDCRectangleShapeGenerator alloc] init];
+
+    MDCCornerTreatment *cornerTreatment = [MDCCornerTreatment cornerWithRadius:8.0f];
+    shapeGenerator.topLeftCorner = cornerTreatment;
+    shapeGenerator.topRightCorner = cornerTreatment;
+
+    [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStatePreferred];
+    [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStateExtended];
+
     [self presentViewController:bottomSheet animated:true completion:nil];
 }
 
