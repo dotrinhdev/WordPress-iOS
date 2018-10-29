@@ -932,8 +932,8 @@ static NSInteger HideSearchMinSites = 3;
 
 - (void)showBottomSheetDemo
 {
-    BottomSheetDemoViewController *viewController = [[BottomSheetDemoViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    BottomSheetDemoViewController *searchController = [[BottomSheetDemoViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:searchController];
 
     if ([WPDeviceIdentification isiPhone] == YES) {
         MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:navigationController];

@@ -3,7 +3,19 @@ import UIKit
 
 // MARK: - BottomSheetDemoViewController
 
-class BottomSheetDemoViewController: UIViewController {
+class BottomSheetDemoViewController: UISearchController {
+    init() {
+        super.init(searchResultsController: nil)
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -15,7 +27,7 @@ class BottomSheetDemoViewController: UIViewController {
         let saveText = NSLocalizedString("Save", comment: "Save button.")
         let saveItem = UIBarButtonItem(title: saveText, style: .done, target: self, action: #selector(demoActionTapped))
         navigationItem.rightBarButtonItem = saveItem
-        
+
         setupView()
     }
 }
@@ -24,9 +36,13 @@ private extension BottomSheetDemoViewController {
     func setupView() {
         view.backgroundColor = .white
 
-        guard let navigationBar = navigationController?.navigationBar else {
+        guard let navigationController = navigationController else {
             return
         }
+
+        navigationController.preferredContentSize = UIScreen.main.bounds.size
+        
+        let navigationBar = navigationController.navigationBar
 
         navigationBar.setBackgroundImage(nil, for: .default)
         navigationBar.shadowImage = nil
