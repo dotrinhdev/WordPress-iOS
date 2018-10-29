@@ -935,18 +935,22 @@ static NSInteger HideSearchMinSites = 3;
     BottomSheetDemoViewController *viewController = [[BottomSheetDemoViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
 
-    MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:navigationController];
-
-    MDCRectangleShapeGenerator *shapeGenerator = [[MDCRectangleShapeGenerator alloc] init];
-
-    MDCCornerTreatment *cornerTreatment = [MDCCornerTreatment cornerWithRadius:8.0f];
-    shapeGenerator.topLeftCorner = cornerTreatment;
-    shapeGenerator.topRightCorner = cornerTreatment;
-
-    [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStatePreferred];
-    [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStateExtended];
-
-    [self presentViewController:bottomSheet animated:true completion:nil];
+    if ([WPDeviceIdentification isiPhone] == YES) {
+        MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:navigationController];
+        
+        MDCRectangleShapeGenerator *shapeGenerator = [[MDCRectangleShapeGenerator alloc] init];
+        
+        MDCCornerTreatment *cornerTreatment = [MDCCornerTreatment cornerWithRadius:8.0f];
+        shapeGenerator.topLeftCorner = cornerTreatment;
+        shapeGenerator.topRightCorner = cornerTreatment;
+        
+        [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStatePreferred];
+        [bottomSheet setShapeGenerator:shapeGenerator forState:MDCSheetStateExtended];
+        
+        [self presentViewController:bottomSheet animated:true completion:nil];
+    } else {
+        // TBD: Present via popover
+    }
 }
 
 - (void)setVisible:(BOOL)visible forBlog:(Blog *)blog
