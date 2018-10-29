@@ -931,7 +931,10 @@ static NSInteger HideSearchMinSites = 3;
 - (void)showBottomSheetDemo
 {
     BottomSheetDemoViewController *viewController = [[BottomSheetDemoViewController alloc] init];
-    MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:viewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+
+    MDCBottomSheetController *bottomSheet = [[MDCBottomSheetController alloc] initWithContentViewController:navigationController];
+    
     [self presentViewController:bottomSheet animated:true completion:nil];
 }
 
