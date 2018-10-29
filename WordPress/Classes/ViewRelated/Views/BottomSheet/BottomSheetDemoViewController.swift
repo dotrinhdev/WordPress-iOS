@@ -3,9 +3,11 @@ import UIKit
 
 // MARK: - BottomSheetDemoViewController
 
-class BottomSheetDemoViewController: UISearchController {
+class BottomSheetDemoViewController: UISearchContainerViewController {
     init() {
-        super.init(searchResultsController: nil)
+        let searchController = BottomSheetDemoSearchController()
+        super.init(searchController: searchController)
+        modalPresentationStyle = .custom
     }
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -41,7 +43,7 @@ private extension BottomSheetDemoViewController {
         }
 
         navigationController.preferredContentSize = UIScreen.main.bounds.size
-        
+
         let navigationBar = navigationController.navigationBar
 
         navigationBar.setBackgroundImage(nil, for: .default)
